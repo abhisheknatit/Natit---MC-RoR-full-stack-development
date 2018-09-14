@@ -1,0 +1,72 @@
+<%= form_for(@photo, :html => {:class => 'row', :multipart => true}) do |f| %>
+  <% if photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+    <input class="form-control" required="required" type="hidden" value="<%= request.remote_ip %>" name="photo[ip]" id="ip">
+  
+	<div class="col-md-12 photo-bg">
+        <div class="row">
+        	
+            <div class="col-md-6">
+                <p>Damage room overview 1</p>
+                <div class="upload-btn-wrapper">
+                  <button class="btnn" type="button"><img class="img-fluid" src="/assets/img-1.png"></button>
+                  <input type="file" name="pictures[]" id="pic1" />
+                </div>
+            </div>
+            <div class="col-md-6 text-right">
+                <p>Damage room overview 2</p>
+                <div class="upload-btn-wrapper">
+                  <button class="btnn" type="button"><img class="img-fluid" src="/assets/img-1.png"></button>
+                  <input type="file" name="pictures[]" id="pic2"/>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <p>Damage room overview 3</p>
+                <div class="upload-btn-wrapper">
+                  <button class="btnn" type="button"><img class="img-fluid" src="/assets/img-2.png"></button>
+                  <input type="file" name="pictures[]" id="pic3"/>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2 text-right">
+                <p>Damage room overview 4</p>
+                <div class="upload-btn-wrapper">
+                  <button class="btnn" type="button"><img class="img-fluid" src="/assets/img-2.png"></button>
+                  <input type="file" name="pictures[]" id="pic4"/>
+                </div>
+            </div>
+         </div>
+         <div class="row" id="picdiv">
+         	
+         </div>
+         <div class="row" >
+         	<div class="col-md-6 mt-2">
+                <p>Damage room overview </p>
+                <div class="upload-btn-wrapper">
+                  <button class="btnn" id="add" type="button"><img class="img-fluid" src="/assets/photo-upload.png"></button>
+                  
+                </div>
+            </div>
+         </div>
+         
+    </div>
+    
+    <div class="col-md-12 px-5 py-2">
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+            <label class="form-check-label" for="exampleCheck1">I agree to the <a href="#">Terms & Conditions</a></label>
+        </div>
+        <button type="submit" class="send">Submit</button>
+    </div>
+
+<% end %>

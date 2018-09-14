@@ -1,0 +1,55 @@
+<div class="page-bg p-4">
+    <div class="white-bg">
+        <div class="container">
+            
+                
+                <div class="row">
+                    <div class="col-md-12 hd">
+                        <h3>Claim Photo Capture</h3>
+                    </div>
+                    <div class="col-md-12 p-4">
+                        <h4 class="text-center"><b>REPLACE WITH <br>ANY NICE</b></h4>
+                    </div>
+                    <div class="col-md-12">
+                        <h5><b>A fast and easy way to capture your claim photos and documents!</b></h5>
+                    </div>
+                    <div class="col-9 light-color">
+                    </div>
+                    <div class="col-3 dark-color">
+                    </div>
+                    <div class="col-md-12 py-2">
+                        <h5>Claim no. :2</h5>
+                        <h5>Arslan Ahmad</h5>
+                    </div>
+                    <div class="col-md-12 photo">
+                        <h4>Photo upload/capture</h4>
+                    </div>
+                    
+                    <div class="col-md-12 photo-bg">
+						<div class="row">
+							<% @photos.each do |photo| %>
+							<div class="col-md-6">
+								<p>Damage room overview </p>
+								<div class="upload-btn-wrapper">
+								  <button class="btnn" type="button"><%= image_tag photo.avatar_url %></button>
+								  
+								</div>
+							</div>
+							<% end %>
+						 </div>
+					</div>
+					
+					<div class="col-md-12 px-5 py-2">
+						<%= link_to 'Add New Pictures', new_photo_path, class: "send" %>
+						
+					</div>
+    
+            
+                    
+                    
+                   
+                </div>
+                
+            </div>
+        </div>
+    </div>
